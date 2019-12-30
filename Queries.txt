@@ -1,0 +1,20 @@
+query 1
+select inventory.* from inventory join category on inventory.id=category.inventory_id where category.category='eatable';
+
+query 2
+
+select count (employee.employee_id) from employee join customer on employee.emp_city 'customer.customer_city join product on customer.cust_purchase_date=product.date join inventory on product.prod_name= inventory.inventory_product_name;
+
+query 3
+
+select count(distinct center) from center where state='Maharashtra';
+
+query 4
+
+select center.center_location_name,center.center_location_city from center join employee on center.emp_id where (DATEDIFF( curdate(),emp_hire_Date)/365)>10 group bycenter.center_location_name;
+
+query 5
+
+select emp_name fromemployee_table as et
+join fact_table as ft
+on et.employee_surrogate_key=ft.employee_surrogate_key
